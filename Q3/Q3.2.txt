@@ -1,0 +1,71 @@
+'''
+The line flight_distance = flight_distance + 1; looks like a single step in C, at the CPU (hardware) level, it is actually broken down into three distinct operations:
+
+    Read: Load the current value of flight_distance from memory into a CPU register.
+
+    Modify: Add 1 to the value in that register.
+
+    Write: Store the new value from the register back into memory.
+
+When core0 and core1 run at the exact same time, their steps can interleave. For example:
+
+    Initial State: flight_distance = 42
+
+    Step 1: core0 reads flight_distance (gets 42).
+
+    Step 2: core1 reads flight_distance (also gets 42).
+
+    Step 3: core0 increments its register to 43 and writes it back (flight_distance is now 43).
+
+    Step 4: core1 increments its register to 43 and writes it back (flight_distance is still 43).
+
+Even though two increments happened, the total distance only went up by 1. Because this happens thousands of times across the 1,000,000 loops, you end up with a final number significantly lower than 2,000,000.
+
+One must eliminate the shared dependency. You do this by giving each thread its own independent variable to work with (thread-local accumulation), and then combining their results at the very end.
+'''
+
+#include <stdio.h>
+#include <pthread.h>
+
+int flight_distance = 0;
+
+// Core 0 calculates its own portion locally
+void* core0_loop(void* arg) {
+    int local_dist = 0; 
+    for (int i = 0; i < 1000000; i++) {
+        local_dist = local_dist + 1;
+    }
+    // Return the result safely by casting it to a void pointer
+    return (void*)(long)local_dist;
+}
+
+// Core 1 calculates its own portion locally
+void* core1_loop(void* arg) {
+    int local_dist = 0;
+    for (int i = 0; i < 1000000; i++) {
+        local_dist = local_dist + 1;
+    }
+    // Return the result safely by casting it to a void pointer
+    return (void*)(long)local_dist;
+}
+
+int main() {
+    pthread_t core0, core1;
+    void *res0, *res1;
+
+    // Start both cores executing their independent tasks
+    pthread_create(&core0, NULL, core0_loop, NULL);
+    pthread_create(&core1, NULL, core1_loop, NULL);
+
+    // Wait for both cores to finish and collect their results
+    pthread_join(core0, &res0);
+    pthread_join(core1, &res1);
+
+    // Combine the independent results safely in a single thread
+    flight_distance = (int)(long)res0 + (int)(long)res1;
+
+    // Print the final calculated distance
+    printf("Expected Distance: 2000000\n");
+    printf("Actual Distance: %d\n", flight_distance);
+    return 0;
+}

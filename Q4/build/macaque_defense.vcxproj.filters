@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\1. Commitment Issues\MonkeyCalculator (2)\MonkeyCalculator\src\thestart_iguess.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\1. Commitment Issues\MonkeyCalculator (2)\MonkeyCalculator\modules\some math i found online.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\1. Commitment Issues\MonkeyCalculator (2)\MonkeyCalculator\timeOfDay\TOD.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\1. Commitment Issues\MonkeyCalculator (2)\MonkeyCalculator\timeOfDay\headers\TOD_Helper.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\1. Commitment Issues\MonkeyCalculator (2)\MonkeyCalculator\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C0C536A1-2164-3015-9E03-F34BC7B3D39A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

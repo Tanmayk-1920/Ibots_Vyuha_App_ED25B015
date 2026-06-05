@@ -1,0 +1,10 @@
+^E:\1. COMMITMENT ISSUES\MONKEYCALCULATOR (2)\MONKEYCALCULATOR\BUILD\CMAKEFILES\9146CAAE51F52CB13D43C81EDB6353A1\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SE:/1. Commitment Issues/MonkeyCalculator (2)/MonkeyCalculator" "-BE:/1. Commitment Issues/MonkeyCalculator (2)/MonkeyCalculator/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "E:/1. Commitment Issues/MonkeyCalculator (2)/MonkeyCalculator/build/macaque_defense.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,10 @@
+^E:\1. COMMITMENT ISSUES\MONKEYCALCULATOR (2)\MONKEYCALCULATOR\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SE:/1. Commitment Issues/MonkeyCalculator (2)/MonkeyCalculator" "-BE:/1. Commitment Issues/MonkeyCalculator (2)/MonkeyCalculator/build" --check-stamp-file "E:/1. Commitment Issues/MonkeyCalculator (2)/MonkeyCalculator/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

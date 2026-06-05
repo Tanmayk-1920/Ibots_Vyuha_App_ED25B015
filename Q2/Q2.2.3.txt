@@ -1,0 +1,3 @@
+Although there are 23 free bytes of memory, and we only need 16 bytes in the fourth iteration , malloc only allocates memory in a single, unbroken, contiguous block of addresses.A single pointer can only point to a uniform, continuous line of memory bytes; it cannot split an array across different, disconnected pockets of memory.
+
+The 23 free bytes are divided by the islands of red and green blocks , the largest contiguous memory is 12 bytes (110 to 11B) which is lower than 16 and hence it crashes.

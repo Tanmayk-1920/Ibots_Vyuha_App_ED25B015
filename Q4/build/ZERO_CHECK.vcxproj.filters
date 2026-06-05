@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\1. Commitment Issues\MonkeyCalculator (2)\MonkeyCalculator\build\CMakeFiles\9146caae51f52cb13d43c81edb6353a1\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{D45052B7-CFBB-3FB2-8FB8-82943E616873}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
