@@ -1,0 +1,13 @@
+A way to explain stack and heap is to take the example of a toy lego tower and a toy box.
+
+Toy Lego Tower (Stack):
+The Stack is like a tall , lego tower. You can only add another lego at the top and can only remove from the top one at a time.
+Because everything in stack is a neat , straight line, the computer knows where the next toy lego is, at the very top making it very fast.
+When you are done with the toy , you just remove the top legos making it very easy to clean.(Happens automatically by computer)
+But your tower can only be so tall , if it is too high , it hits the ceiling of the room and crashes , this is called stack overflow.
+
+
+Toy Box (Heap):
+The Heap is like a giant, messy toy box. If you want to play with a giant toy racetrack, it won't fit on your Lego tower. So, you throw it into the big toy box. You can put things anywhere you want of any size.
+But because you put things anywhere , the computer does not exactly know where the toy is , so it is slower.
+The box can only fit so many things , if it is too full, any new tous you put just overflow (Memory Leak) ,so remember to remove unnecesssary toys from the box (Does not happen automatically , manually frreing up memory is important).
