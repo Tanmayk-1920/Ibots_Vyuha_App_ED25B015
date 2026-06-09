@@ -1,19 +1,19 @@
 Problem 1: App crashes on division by zero.
-Feedback: "We should add validation logic to handle zero values and prevent unexpected runtime exceptions." 
+Feedback: Please add validation to handle zero values and prevent the app from crashing.
 
 Problem 2: Unused import os statement.
-Feedback: "Removing unused module imports like os will help optimize our resource profile and keep the codebase clean."  
+Feedback: Please remove the unused os import to keep the code clean.
 
 Problem 3: Redundant GLOBAL_LAST_RESULT_VAL variable.
-Feedback: "We should deprecate unreferenced variables like GLOBAL_LAST_RESULT_VAL to improve overall code maintainability." 
+Feedback: We should remove GLOBAL_LAST_RESULT_VAL since it is no longer referenced.
 
 Problem 4: Unprofessional error messages.
-Feedback: "Updating user-facing strings to be more professional and descriptive will refine the end-user experience."  
+Feedback: The user-facing error messages should be updated to be more descriptive and professional.
 
 Problem 5: Catch-all exception block hides specific errors.
-Feedback: "Using targeted exception handling will help us capture exact errors and simplify automated pipeline debugging." 
+Feedback: We should catch specific exceptions instead of using a catch-all block, which makes debugging difficult.
  
 Problem 6: Missing checks for extra command-line arguments.
-Feedback: "Adding precise argument count validation will enhance command-line interface stability."  
+Feedback: Please add validation to ensure the correct number of command-line arguments is passed.
 
  
